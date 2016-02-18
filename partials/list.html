@@ -1,0 +1,28 @@
+<section class="flights">
+    <div class="search">
+        <label>Search</label>
+        <input ng-model="query" placeholder="search for flights" autofocus>
+        <label class="form-group">Order By:
+            <select ng-model="flightOrder">
+                <option value="number" selected>number</option>
+                <option value="origin">origin</option>
+            </select>
+        </label>
+        <label class="form-group">
+            <input type="radio" ng-model="direction" name="direction" checked>
+            Ascending
+        </label>
+        <label>
+            <input type="radio" ng-model="direction" name="direction" value="reverse">
+            Dscending
+        </label>
+    </div>
+    <ul>
+        <li ng-repeat="flight in flights| filter : query| orderBy:flightOrder:direction">
+            <a href="#/details/{{flights.indexOf(flight)}}">
+                <h1>{{flight.number}}</h1>
+                <h2>{{flight.origin}}</h2>
+            </a>
+        </li>
+    </ul>
+</section>
