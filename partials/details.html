@@ -1,5 +1,7 @@
 <section class="flightinfo">
     <div class="flight cf" ng-model="flights">
+        <a class="btn btn-left" href="#/details/{{prevItem}}">&lt;</a>
+        <a class="btn btn-right" href="#/details/{{nextItem}}">&gt;</a>
         <h1>{{flights[whichFlight].number}}</h1>
         <h1>{{flights[whichFlight].origin}}</h1>
     </div>
