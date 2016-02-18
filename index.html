@@ -8,9 +8,15 @@
 </head>
 <body>
     <div ng-controller="MyController">
-        <h1>{{author.name}}</h1>
-        <p>{{author.title}},
-        {{author.company}}</p>
+        <div class="content">
+            <ul>
+                <li ng-repeat="artist in artists">
+                    <h1>{{artist.name}}</h1>
+                    <h2>{{artist.company}}</h2>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </body>
 </html>
