@@ -17,8 +17,8 @@
             Dscending
         </label>
     </div>
-    <ul>
-        <li ng-repeat="flight in flights| filter : query| orderBy:flightOrder:direction">
+    <ul class="flightList" ng-show="query">
+        <li ng-animate="animate" ng-repeat="flight in flights| filter : query| orderBy:flightOrder:direction" class="flight">
             <a href="#/details/{{flights.indexOf(flight)}}">
                 <h1>{{flight.number}}</h1>
                 <h2>{{flight.origin}}</h2>

@@ -1,4 +1,4 @@
-var flightController = angular.module("flightController", []);
+var flightController = angular.module("flightController", ['ngAnimate']);
 
 flightController.controller('ListController', ["$scope", "$http", function($scope, $http){
     $http.get('js/data.json').success(function(data) {
