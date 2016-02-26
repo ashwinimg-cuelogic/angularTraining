@@ -15,3 +15,10 @@ flightController.controller('DetailsController', ["$scope", "$http", "$routePara
         $scope.whichFlight = $routeParams.itemId;
     });
 }]);
+
+flightController.controller('RegisterController', ["$scope", "$http", "$routeParams", function($scope, $http, $routeParams){
+    $scope.register = function() {
+        $scope.messge = 'welcome '+ $scope.user.firstName;
+    }
+}]);
+
