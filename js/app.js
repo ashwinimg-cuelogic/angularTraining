@@ -17,7 +17,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
         templateUrl:'partials/register.html',
         controller:'RegisterController'
     }).
+    when('/user/login', {
+        templateUrl:'partials/login.html',
+        controller:'LoginController'
+    }).
     otherwise({
-        redirectTo: "/list"
+        redirectTo: "/user/login"
     });
 }]);

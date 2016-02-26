@@ -18,7 +18,14 @@ flightController.controller('DetailsController', ["$scope", "$http", "$routePara
 
 flightController.controller('RegisterController', ["$scope", "$http", "$routeParams", function($scope, $http, $routeParams){
     $scope.register = function() {
-        $scope.messge = 'welcome '+ $scope.user.firstName;
+        $scope.message = 'welcome '+ $scope.user.firstName;
     }
 }]);
+
+flightController.controller('LoginController', ["$scope", "$http", "$routeParams", function($scope, $http, $routeParams){
+    $scope.login = function() {
+        $scope.message = 'welcome '+ $scope.user.email;
+    }
+}]);
+
 
