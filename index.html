@@ -23,6 +23,10 @@
     <header>
         <nav class="clearfix" ng-include="'partials/nav.html'"></nav>
     </header>
+    {{currentUser}}
+    <div class="userinfo" ng-show="currentUser">
+        <span class="userinfo">Hi {{currentUser.firstname}}</span>
+    </div>
     <div class="main" ng-view>
     </div>
 </body>
