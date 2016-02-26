@@ -1,3 +1,13 @@
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
 .flightList li {
     margin:0;
     padding: 10px 10px 0 10px;
@@ -47,4 +57,64 @@ input.ng-valid.ng-touched {
 .error {
     color:red;
     padding-bottom: 10px;
+}
+
+nav {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.branding {
+    float: left;
+    margin: 20px;
+}
+
+.branding a {
+    width: 80%;
+    font-size: 1.6em;
+    text-align: left;
+    color: #1B7998;
+    text-decoration: none;
+    text-align: left;
+}
+
+.branding a:hover {
+    color: none;
+}
+
+
+nav ul {
+    width: 60%;
+    float: right;
+}
+
+nav ul li {
+    float: right;
+    color: #145266;
+    font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+nav ul li.user {
+    background-color: #D24244;
+    color: #EFC94C;
+    font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+}
+
+nav ul li.user.hello {
+    margin-left: 60px;
+    padding: 10px 15px;
+}
+
+nav ul li a {
+    float: left;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+nav li a:hover {
+    color: #E76C5A;
 }

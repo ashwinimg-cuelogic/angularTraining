@@ -1,4 +1,5 @@
-var flightController = angular.module("flightController", ['ngAnimate']);
+var flightController = angular.module("flightController", ['ngAnimate',
+    'firebase']).constant('FIREBASE_URL', "https://angulartrainingash.firebaseio.com/");
 
 flightController.controller('ListController', ["$scope", "$http", function($scope, $http){
     $http.get('js/data.json').success(function(data) {
@@ -16,9 +17,19 @@ flightController.controller('DetailsController', ["$scope", "$http", "$routePara
     });
 }]);
 
-flightController.controller('RegisterController', ["$scope", "$http", "$routeParams", function($scope, $http, $routeParams){
+flightController.controller('RegisterController', ["$scope", "$firebaseAuth", "FIREBASE_URL", function($scope, $firebaseAuth, FIREBASE_URL){
+   var ref = new Firebase(FIREBASE_URL);
+   var auth = $firebaseAuth(ref);
+
     $scope.register = function() {
-        $scope.message = 'welcome '+ $scope.user.firstName;
+        auth.$createUser({
+            email: $scope.user.email,
+            password: $scope.user.password
+        }).then(function(regUser){
+            $scope.message = 'welcome '+ $scope.user.email;
+        }).catch(function(err) {
+            $scope.message = err.message;
+        });
     }
 }]);
 
