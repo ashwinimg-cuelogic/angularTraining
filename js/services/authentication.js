@@ -13,6 +13,18 @@ myApp.factory('Authentication', ['$rootScope', '$firebaseAuth', 'FIREBASE_URL',
                     password: user.password
                 }).then(function(regUser){
                     $rootScope.message = 'welcome '+ user.email;
+
+                    //put the data in firebase database
+                    var regRef = new Firebase(FIREBASE_URL+ 'users')
+                        .child(regUser.uid)
+                        .set({
+                            date:Firebase.ServerValue.TIMESTAMP,
+                            regUser:regUser.uid,
+                            firstname:user.firstName,
+                            lastname:user.lastName,
+                            email:user.email
+                        })
+
                 }).catch(function(err) {
                     $rootScope.message = err.message;
                 });
