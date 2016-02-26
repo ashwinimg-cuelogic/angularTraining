@@ -24,6 +24,9 @@ myApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObject
                     $rootScope.message = err.message;
                 });
             },
+            logout: function() {
+                return auth.$unauth();
+            },
             register: function(user) {
                 auth.$createUser({
                     email: user.email,
