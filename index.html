@@ -8,6 +8,7 @@
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular/angular-route.min.js"></script>
     <script src="lib/angular/angular-animate.min.js"></script>
+    <script src="lib/angular/angular-ui-router.min.js"></script>
 
 
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
@@ -27,7 +28,7 @@
         <span class="userinfo">Hi {{currentUser.firstname}}</span>
         <a ng-href="#/login" ng-click="logout">logout</a>
     </div>
-    <div class="main" ng-view>
+    <div class="main" ui-view>
     </div>
 </body>
 </html>

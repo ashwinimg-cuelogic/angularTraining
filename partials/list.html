@@ -19,10 +19,11 @@
     </div>
     <ul class="flightList" ng-show="query">
         <li ng-animate="animate" ng-repeat="flight in flights| filter : query| orderBy:flightOrder:direction" class="flight">
-            <a href="#/details/{{flights.indexOf(flight)}}">
+            <a ui-sref="list_items({ itemId : {{flights.indexOf(flight)}}})">
                 <h1>{{flight.number}}</h1>
                 <h2>{{flight.origin}}</h2>
             </a>
         </li>
+        <div ui-view></div>
     </ul>
 </section>

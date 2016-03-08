@@ -1,9 +1,10 @@
 <section class="flightinfo">
+    <h1>welcome to flight !</h1>
     <div class="flight cf" ng-model="flights">
-        <a class="btn btn-left" href="#/details/{{prevItem}}">&lt;</a>
-        <a class="btn btn-right" href="#/details/{{nextItem}}">&gt;</a>
+        <a class="btn btn-left" ui-sref="list_items({itemId:prevItem})">&lt;</a>
+        <a class="btn btn-right" ui-sref="list_items({itemId : nextItem})">&gt;</a>
         <h1>{{flights[whichFlight].number}}</h1>
         <h1>{{flights[whichFlight].origin}}</h1>
     </div>
-    <a href="#/list">BACK TO SEARCH</a>
+    <a ui-sref="#/list">BACK TO SEARCH</a>
 </section>
