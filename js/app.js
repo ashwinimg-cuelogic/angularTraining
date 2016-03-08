@@ -75,14 +75,21 @@ myApp.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $u
             controller:'DetailsController'
         })
         .state("user", {
-            url: "/users",
+            url: "/user",
             templateUrl: 'partials/users.html'
 
         })
         .state("user.register", {
             url: "/register",
-            templateUrl: 'partials/register.html',
-            controller:'RegisterController'
+            controller:'RegisterController',
+            views: {
+                "viewA" :{
+                    templateUrl : 'partials/users.viewA.html'
+                },
+                "viewB" :{
+                    templateUrl : 'partials/register.html'
+                }
+            }
         })
         .state("user.login", {
             url: "/login",
